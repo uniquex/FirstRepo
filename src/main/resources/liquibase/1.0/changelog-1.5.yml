@@ -1,0 +1,24 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create Role and Taxi Table
+      author: Hasan Aliyev
+      changes:
+        - createTable:
+            tableName: mytaxis_myroles
+            columns:
+              - column:
+                  name: mytaxi_id
+                  type: int
+                  constraints:
+                    foreignKeyName: fk_mytaxis_myroles_to_mytaxis
+                    references: mytaxi(id)
+                    nullable: false
+              - column:
+                  name: myrole_id
+                  type: int
+                  constraints:
+                    foreignKeyName: fk_mytaxis_myroles_to_myroles
+                    references: myrole(id)
+                    nullable: false
+
+

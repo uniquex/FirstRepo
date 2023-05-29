@@ -1,0 +1,24 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create author_book table
+      author: Ramin Aliyev
+      changes:
+        - createTable:
+            tableName: club_player
+            columns:
+              - column:
+                  name: players_id
+                  type: int
+                  constraints:
+                    foreignKeyName: fk_club_player_to_players
+                    references: players(id)
+                    nullable: false
+                    remarks: id of players
+              - column:
+                  name: clubs_id
+                  type: int
+                  constraints:
+                    foreignKeyName: fk_club_player_to_clubs
+                    references: clubs(id)
+                    nullable: false
+                    remarks: id of clubs

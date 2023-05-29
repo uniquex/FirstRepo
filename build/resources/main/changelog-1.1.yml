@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create Author table
+      author: Hasan Aliyev
+      changes:
+        - createTable:
+            tableName: clubs
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    remarks: id of clubs
+              - column:
+                  name: name
+                  type: varchar(64)
+              - column:
+                  name: trophies
+                  type: int

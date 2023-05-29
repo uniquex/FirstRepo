@@ -1,0 +1,39 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create Taxi Table
+      author: Hasan Aliyev
+      changes:
+        - createTable:
+            tableName: mytaxi
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    remarks: id of taxi
+              - column:
+                  name: brand_name
+                  type: varchar(32)
+                  constraints:
+                    unique: true
+              - column:
+                  name: driver_name
+                  type: varchar(64)
+              - column:
+                  name: vehicle_number
+                  type: varchar(16)
+              - column:
+                  name: created_at
+                  type: timestamp
+                  defaultValueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  defaultValueComputed: CURRENT_TIMESTAMP
+
+
+
+
